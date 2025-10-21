@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Performance | Heavy QV-Xception</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background: linear-gradient(to right,#141e30,#243b55); color:#fff; font-family:'Segoe UI',sans-serif;}
+.navbar{background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);padding:15px 25px;box-shadow:0px 4px 15px rgba(0,0,0,0.4);}
+.navbar-brand{font-weight:bold;font-size:1.4rem;color:#f1c40f !important;}
+.navbar-nav .nav-link{color:#fff !important;margin:0 8px;transition:0.3s;}
+.navbar-nav .nav-link:hover{color:#f1c40f !important;text-shadow:0px 0px 8px rgba(241,196,15,0.7);}
+.card{border-radius:15px;padding:20px;background:#fff;color:#000;box-shadow:0px 8px 20px rgba(0,0,0,0.3);margin-bottom:30px;}
+.kpi{text-align:center;padding:20px;border-radius:15px;background:#fff;color:#000;margin-bottom:20px;box-shadow:0px 8px 20px rgba(0,0,0,0.3);}
+table th, table td{vertical-align: middle;}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+<div class="container-fluid">
+<a class="navbar-brand" href="{{ url_for('home') }}">Heavy QV-Xception</a>
+<div class="collapse navbar-collapse justify-content-end">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Upload</a></li>
+<li class="nav-item"><a class="nav-link active" href="{{ url_for('performance') }}">Performance</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('charts') }}">Charts</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="container my-5">
+
+<!-- KPI Cards -->
+<div class="row mb-4">
+<div class="col-md-6"><div class="kpi"><h5>Training Accuracy</h5><h2>92.44%</h2></div></div>
+<div class="col-md-6"><div class="kpi"><h5>Validation Accuracy</h5><h2>93.57%</h2></div></div>
+</div>
+
+<!-- Confusion Matrix -->
+<div class="card">
+<h4 class="fw-bold mb-3">Confusion Matrix</h4>
+<table class="table table-bordered table-striped text-center">
+<thead>
+<tr>
+<th>Actual \ Predicted</th>
+<th>Buildings</th>
+<th>Forest</th>
+<th>Glacier</th>
+<th>Mountain</th>
+<th>Sea</th>
+<th>Street</th>
+</tr>
+</thead>
+<tbody>
+<tr><th>Buildings</th><td>389</td><td>10</td><td>15</td><td>10</td><td>5</td><td>8</td></tr>
+<tr><th>Forest</th><td>0</td><td>474</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><th>Glacier</th><td>20</td><td>0</td><td>492</td><td>15</td><td>15</td><td>11</td></tr>
+<tr><th>Mountain</th><td>15</td><td>2</td><td>18</td><td>462</td><td>10</td><td>18</td></tr>
+<tr><th>Sea</th><td>5</td><td>0</td><td>5</td><td>5</td><td>505</td><td>0</td></tr>
+<tr><th>Street</th><td>5</td><td>2</td><td>2</td><td>10</td><td>0</td><td>482</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+</div>
+</body>
+</html>
